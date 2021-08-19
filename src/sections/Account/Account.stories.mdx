@@ -1,0 +1,54 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { getCustomerDecorator } from '../../lib/decorators'
+
+import Account from '.'
+
+<Meta title="Sections/Account" component={Account} />
+
+# Header
+
+This is the Account section.
+
+## Props
+
+<ArgsTable of={Account} />
+
+## Examples
+
+### Shopify
+
+<Preview>
+  <Story name="Shopify" decorators={[getCustomerDecorator('john@shopify-platform.com')]}>
+    {args => <Account {...args} />}
+  </Story>
+</Preview>
+
+### Shopify, long strings
+
+<Preview>
+  <Story
+    name="Shopify, long strings"
+    decorators={[
+      getCustomerDecorator('remington.wolfeschlegelsteinhausenbergerdorff@shopify-platform.com'),
+    ]}
+  >
+    {args => <Account {...args} />}
+  </Story>
+</Preview>
+
+### BigCommerce
+
+<Preview>
+  <Story name="BigCommerce" decorators={[getCustomerDecorator('bill@bigcommerce-platform.com')]}>
+    {args => <Account {...args} />}
+  </Story>
+</Preview>
+
+### Unauthenticated
+
+<Preview>
+  <Story name="Unauthenticated" decorators={[getCustomerDecorator()]}>
+    {args => <Account {...args} />}
+  </Story>
+</Preview>

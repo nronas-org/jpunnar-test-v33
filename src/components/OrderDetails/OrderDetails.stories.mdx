@@ -1,0 +1,56 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import getDecorators from './decorators'
+import OrderDetails from '.'
+
+<Meta
+  title="Components/OrderDetails"
+  component={OrderDetails}
+  parameters={{ layout: 'centered' }}
+/>
+
+# OrderDetails
+
+The `OrderDetails` component is used to display all the customer orders.
+
+## Props
+
+<ArgsTable of={OrderDetails} />
+
+## Examples
+
+### Shopify
+
+<Preview>
+  <Story
+    name="Shopify"
+    decorators={getDecorators('john@shopify-platform.com', 1)}
+    parameters={{
+      docs: {
+        source: {
+          code: '<OrderDetails order={order} />',
+        },
+      },
+    }}
+  >
+    <OrderDetails />
+  </Story>
+</Preview>
+
+### BigCommerce
+
+<Preview>
+  <Story
+    name="BigCommerce"
+    decorators={getDecorators('bill@bigcommerce-platform.com')}
+    parameters={{
+      docs: {
+        source: {
+          code: '<OrderDetails order={order} />',
+        },
+      },
+    }}
+  >
+    <OrderDetails />
+  </Story>
+</Preview>
